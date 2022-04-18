@@ -40,18 +40,11 @@ def iterativeBinarySearch(target, data):
 
 import sys
 N = int(sys.stdin.readline())
-N_array = sorted(list(map(int, sys.stdin.readline().split())))
+N_array = sorted(list(map(int, sys.stdin.readline().split()))) # 정렬 시키는 게 포인트!
 
 M = int(sys.stdin.readline())
-M_array = list(map(int, sys.stdin.readline().split())) #시간 제한이 1초이므로, 이진 탐색을 사용해보자! .
+M_array = list(map(int, sys.stdin.readline().split()))
 
 for i in M_array:
     return_value = iterativeBinarySearch(i, N_array)
     print(0) if return_value is None else print(1)
-
-'''더 빠른 방법은 집합 자료형으로 찾는다
-N_set = set(N_array)
-
-for i in M_array:
-    print(1) if i in N_set else print(0)
-'''
